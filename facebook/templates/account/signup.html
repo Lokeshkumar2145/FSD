@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block  body %}
+<div class="card bg-light p-5">
+  {% for message in messages %}
+         <!--=========  Alert message from bootstrap  ========== -->
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          <strong>{{message}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        {% endfor %}
+    <h4 class="text-danger">Signup</h4>
+    <form action="" method="post">
+      {%csrf_token%}
+      <label for="text">First Name</label>
+      <div class="form_group">
+        <input
+          type="text"
+          id="text"
+          class="form_control p-1"
+          name="fname"
+          required
+        /></div>
+        <label for="text">Last Name</label>
+      <div class="form_group">
+        <input
+          type="text"
+          id="text"
+          class="form_control p-1"
+          name="lname"
+          required
+        /></div>
+        <br>
+        {% comment %} <label for="text">phone</label>
+      <div class="form_group">
+        <input
+          type="text"
+          id="text"
+          class="form_control p-1"
+          name="phone"
+          required
+        /></div>
+        <br> {% endcomment %}
+      <label for="email">Email</label>
+      <div class="form_group">
+        <input
+          type="email"
+          id="email"
+          class="form_control p-1"
+          name="email"
+          required
+        />
+      </div>
+      <label for="email">Password</label>
+      <div class="form_group">
+        <input
+          type="Password"
+          id="pass1"
+          class="form_control p-1"
+          name="pass"
+          required
+        />
+      </div>
+      <label for="email">Confirm Password</label>
+      <div class="form_group">
+        <input
+          type="password"
+          id="pass2"
+          class="form_control p-1"
+          name="pass1"
+          required
+        />
+      </div>
+      {% comment %} <br>
+      <label for="date-picker-example">Date Of Birth</label>
+      <div id="date-picker-example" class="form-group" inline="true">
+        <input placeholder="Select date" type="date" id="example" name="dob" class="form_group">
+        
+        <i class="fas fa-calendar input-prefix"></i>
+      </div>
+      <br>
+      <div>
+        <label for="form-check">Gender</label>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name="gender" value="female" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+           Female
+          </label>
+        </div> {% endcomment %}
+      </div>
+
+      <br />
+  
+      <button class="btn btn-dark" type="submit">SignIn</button>
+      <br />
+      <br />
+      Already a User? <a href="/login/">Login</a>
+      <br />
+    </form>
+  </div>
+
+
+{% endblock body %}
+  
+  

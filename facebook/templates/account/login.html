@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="card bg-light p-5">
+    {% for message in messages %}
+         <!--=========  Alert message from bootstrap  ========== -->
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          <strong>{{message}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        {% endfor %}
+    <h4 class="text-danger">Login</h4>
+    <form action="" method="post">
+      {%csrf_token%}
+      <br />
+  
+      <label for="email">Email</label>
+      <div class="form_group">
+        <input
+          type="text"
+          id="email"
+          class="form_control p-1"
+          name="email"
+          required
+        />
+      </div>
+      <label for="email">Password</label>
+      <div class="form_group">
+        <input
+          type="Password"
+          id="pass1"
+          class="form_control p-1"
+          name="pass1"
+          required
+        />
+      </div>
+      
+      <br />
+  
+      <button class="btn btn-success" type="submit">Login</button>
+      <br />
+      <br />
+      New User? <a href="/signup">SignUp</a>
+      <br />
+    </form>
+  </div>
+
+{% endblock body %}
